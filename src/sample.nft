@@ -1,0 +1,7 @@
+define int_if1 = eth0
+
+table {
+
+}
+flush ruleset "fas"
+# comment

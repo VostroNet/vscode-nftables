@@ -1,0 +1,51 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "nft",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.nft",
+				"match": "\\b(table|flush)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.nft",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nft",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.nft",
+			"begin": "#",
+			"patterns": [{
+				"name": "comment.line.nft"
+			}]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.parameter.nft",
+				"match": "\\b(define)\\b"
+			}]
+		}
+	},
+	"scopeName": "nft"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "nft",
+    "displayName": "NFT",
+    "description": "nft colorizer",
+    "version": "0.0.1",
+    "publisher": "kheldiente",
+    "engines": {
+        "vscode": "^1.26.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "nft",
+            "aliases": ["nft", "nft"],
+            "extensions": [".nft"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "nft",
+            "scopeName": "nft",
+            "path": "./syntaxes/nft.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "nft",
+            "path": "./snippets/nft.snippet.json"
+        }]
+    },
+    "scopeName": "nft"
+}

@@ -3,47 +3,41 @@
 	"name": "nft",
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#comments"
-		},
-		{
-			"include": "#variables"
+			"include": "#statements"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"statements": {
 			"patterns": [{
-				"name": "keyword.control.nft",
-				"match": "\\b(table|flush)\\b"
+				"include": "#var-single-variable"
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.nft",
-			"begin": "\"",
-			"end": "\"",
+		"var-single-variable": {
+			"patterns": [{
+				"include": "#var-single-variable-type-annotation"
+			}]
+		},
+		"var-single-variable-type-annotation": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.nft",
-					"match": "\\\\."
+					"include": "#strings"
+				},
+				{
+					"include": "#comment"
 				}
 			]
 		},
-		"comments": {
+		"strings": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "define.*\\="
+			}]
+		},
+		"comment": {
 			"name": "comment.nft",
 			"begin": "#",
 			"patterns": [{
 				"name": "comment.line.nft"
-			}]
-		},
-		"variables": {
-			"patterns": [{
-				"name": "variable.parameter.nft",
-				"match": "\\b(define)\\b"
 			}]
 		}
 	},

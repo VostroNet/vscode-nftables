@@ -1,4 +1,4 @@
-define int_if1 = eth0
+define int_if1 = eth0 
 
 table {
 

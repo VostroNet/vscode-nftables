@@ -4,12 +4,31 @@
 	"patterns": [
 		{
 			"include": "#statements"
+		},
+		{
+			"include": "#block"
 		}
 	],
 	"repository": {
 		"statements": {
+			"patterns": [
+				{
+					"include": "#var-single-variable"
+				}
+			]
+		},
+		"block": {
+			"name": "meta.block.nft",
+			"begin": "\\{",
+			"beginCaptures": [{
+				"name": "punctuation.definition.block.nft"
+			}],
+			"end": "\\}",
+			"endCaptures": [{
+				"name": "punctuation.definition.block.nft"
+			}],
 			"patterns": [{
-				"include": "#var-single-variable"
+				"include": "#strings"
 			}]
 		},
 		"var-single-variable": {
@@ -30,12 +49,13 @@
 		"strings": {
 			"patterns": [{
 					"name": "keyword.control.nft",
-					"match": "define.*\\="
+					"match": "\\b(define|table|flush|chain|type|ct|iif|ip|ip6|tcp|accept)\\b"
 			}]
 		},
 		"comment": {
 			"name": "comment.nft",
 			"begin": "#",
+			"end": ".*",
 			"patterns": [{
 				"name": "comment.line.nft"
 			}]

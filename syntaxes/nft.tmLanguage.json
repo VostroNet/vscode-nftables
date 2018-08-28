@@ -95,13 +95,13 @@
 		"set": {
 			"patterns": [{
 					"name": "keyword.control.nft",
-					"match": "\\b(set|add|delete|list|flush|add element|delete element)\\b"
+					"match": "\\b(set|add|delete|list|flush|add|delete)\\b"
 			}]
 		},
 		"map": {
 			"patterns": [{
 					"name": "keyword.control.nft",
-					"match": "\\b(map|add|delete|list|flush|add element|delete element)\\b"
+					"match": "\\b(map|add|delete|list|flush|add|delete)\\b"
 			}]
 		},
 		"flowtable": {
@@ -114,6 +114,12 @@
 			"patterns": [{
 					"name": "keyword.control.nft",
 					"match": "\\b(ct|counter|quota)\\b"
+			}]
+		},
+		"expression": {
+			"patterns": [{
+				"name": "keyword.control.nft",
+				"match": "\\b(describe)\\b"
 			}]
 		},
 		"comment": {

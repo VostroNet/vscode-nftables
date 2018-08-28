@@ -2,6 +2,8 @@
 
 flush ruleset
 
+define int_ifth1 = eth0;
+
 table inet filter {
 	chain input {
 		type filter hook input priority 0; policy drop;

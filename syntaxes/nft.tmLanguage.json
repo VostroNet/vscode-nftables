@@ -14,20 +14,6 @@
 				}
 			]
 		},
-		"block": {
-			"name": "meta.block.nft",
-			"begin": "\\{",
-			"beginCaptures": [{
-				"name": "punctuation.definition.block.nft"
-			}],
-			"end": "\\}",
-			"endCaptures": [{
-				"name": "punctuation.definition.block.nft"
-			}],
-			"patterns": [{
-				"include": "#strings"
-			}]
-		},
 		"var-single-variable": {
 			"patterns": [{
 				"include": "#var-single-variable-type-annotation"
@@ -36,17 +22,98 @@
 		"var-single-variable-type-annotation": {
 			"patterns": [
 				{
-					"include": "#strings"
+					"include": "#declaration"
+				},
+				{
+					"include": "#addressFamily" 
+				},
+				{
+					"include": "#ruleset"
+				},
+				{
+					"include": "#table"
+				},
+				{
+					"include": "#chain"
+				},
+				{
+					"include": "#rule"
+				},
+				{
+					"include": "#set"
+				},
+				{
+					"include": "#map"
+				},
+				{
+					"include": "#flowtable"
+				},
+				{
+					"include": "#statefulObj"
 				},
 				{
 					"include": "#comment"
 				}
 			]
 		},
-		"strings": {
+		"declaration": {
 			"patterns": [{
 					"name": "keyword.control.nft",
-					"match": "\\b(define|table|flush|chain|type|ct|iif|ip|ip6|tcp|accept)\\b"
+					"match": "\\b(define)\\b"
+			}]
+		},
+		"addressFamily": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(ip|ip6|inet|arp|bridge|netdev)\\b"
+			}]
+		},
+		"ruleset": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(ruleset|list|flush|export)\\b"
+			}]
+		},
+		"table": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(table|create|add|flags)\\b"
+			}]
+		},
+		"chain": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(chain|add|create|delete|rename|list|flush)\\b"
+			}]
+		},
+		"rule": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(rule|add|insert|replace|delete)\\b"
+			}]
+		},
+		"set": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(set|add|delete|list|flush|add element|delete element)\\b"
+			}]
+		},
+		"map": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(map|add|delete|list|flush|add element|delete element)\\b"
+			}]
+		},
+		"flowtable": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(flowtable|add|delete|list|reset)\\b"
+			}]
+		},
+		"statefulObj": {
+			"patterns": [{
+					"name": "keyword.control.nft",
+					"match": "\\b(ct|counter|quota)\\b"
 			}]
 		},
 		"comment": {

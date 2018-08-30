@@ -25,31 +25,7 @@
 					"include": "#declaration"
 				},
 				{
-					"include": "#addressFamily" 
-				},
-				{
-					"include": "#ruleset"
-				},
-				{
-					"include": "#table"
-				},
-				{
-					"include": "#chain"
-				},
-				{
-					"include": "#rule"
-				},
-				{
-					"include": "#set"
-				},
-				{
-					"include": "#map"
-				},
-				{
-					"include": "#flowtable"
-				},
-				{
-					"include": "#statefulObj"
+					"include": "#expression"
 				},
 				{
 					"include": "#comment"
@@ -59,67 +35,18 @@
 		"declaration": {
 			"patterns": [{
 					"name": "keyword.control.nft",
-					"match": "\\b(define)\\b"
+					"match": "\\b(define|ip|ip6|inet|arp|bridge|netdev|ruleset|flush|export|table|flags|chain|create|rename|list|flush|rule|insert|replace|delete|set|add|list|flush|map|list|flush|flowtable|list|reset|ct|counter|quota|describe|tcp|iif|type)\\b"
 			}]
 		},
-		"addressFamily": {
+		"block": {
 			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(ip|ip6|inet|arp|bridge|netdev)\\b"
-			}]
-		},
-		"ruleset": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(ruleset|list|flush|export)\\b"
-			}]
-		},
-		"table": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(table|create|add|flags)\\b"
-			}]
-		},
-		"chain": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(chain|add|create|delete|rename|list|flush)\\b"
-			}]
-		},
-		"rule": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(rule|add|insert|replace|delete)\\b"
-			}]
-		},
-		"set": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(set|add|delete|list|flush|add|delete)\\b"
-			}]
-		},
-		"map": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(map|add|delete|list|flush|add|delete)\\b"
-			}]
-		},
-		"flowtable": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(flowtable|add|delete|list|reset)\\b"
-			}]
-		},
-		"statefulObj": {
-			"patterns": [{
-					"name": "keyword.control.nft",
-					"match": "\\b(ct|counter|quota)\\b"
+				"name": "keyword.control.nft",
+				"match": "\b()\b"
 			}]
 		},
 		"expression": {
 			"patterns": [{
-				"name": "keyword.control.nft",
-				"match": "\\b(describe)\\b"
+				"name": "keyword.control.nft"
 			}]
 		},
 		"comment": {

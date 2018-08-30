@@ -39,9 +39,20 @@
 			}]
 		},
 		"block": {
+			"begin": "\\{",
+			"end": "\\}",
 			"patterns": [{
-				"name": "keyword.control.nft",
-				"match": "\b()\b"
+				"pattern": [
+					{
+						"include": "#declaration"
+					},
+					{
+						"include": "#expression"
+					},
+					{
+						"include": "#comment"
+					}
+				]
 			}]
 		},
 		"expression": {
